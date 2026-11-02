@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Nome da ROM mostrado no banner (troque aqui) -->
+    <string name="about_device_rom_name" translatable="false">MirageOS</string>
+    <string name="about_device_android_version">Android <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="about_device_name_tile">Device name</string>
+    <string name="about_device_storage">Storage</string>
+    <string name="about_device_storage_summary"><xliff:g id="used">%1$d</xliff:g> GB / <xliff:g id="total">%2$d</xliff:g> GB</string>
+    <string name="about_device_maintainer">Maintainer</string>
+    <string name="about_device_maintainer_unknown">Not set</string>
+    <string name="about_device_ram">RAM</string>
+    <string name="about_device_ram_summary"><xliff:g id="ram">%1$d</xliff:g> GB</string>
+    <string name="about_device_camera">Camera</string>
+    <string name="about_device_camera_summary">Front <xliff:g id="front">%1$s</xliff:g> / Rear <xliff:g id="rear">%2$s</xliff:g></string>
+    <string name="about_device_camera_front_only">Front <xliff:g id="front">%1$s</xliff:g></string>
+    <string name="about_device_camera_rear_only">Rear <xliff:g id="rear">%1$s</xliff:g></string>
+    <string name="about_device_display">Display</string>
+    <string name="about_device_details_summary">Account, legal info, SIM status, model, hardware, IMEI, Android version and more</string>
+</resources>

@@ -76,7 +76,8 @@ open class MyDeviceInfoScreen :
 
     override fun getMetricsCategory() = SettingsEnums.DEVICEINFO
 
-    override fun isFlagEnabled(context: Context) = Flags.catalystMyDeviceInfoPrefScreen()
+    // Disabled: the screen is a custom header + details shortcut (not catalyst-compatible).
+    override fun isFlagEnabled(context: Context) = false
 
     override fun fragmentClass(): Class<out Fragment>? = MyDeviceInfoFragment::class.java
 

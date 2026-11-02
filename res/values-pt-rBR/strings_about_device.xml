@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="about_device_android_version">Android <xliff:g id="version">%1$s</xliff:g></string>
+    <string name="about_device_name_tile">Nome do dispositivo</string>
+    <string name="about_device_storage">Armazenamento</string>
+    <string name="about_device_storage_summary"><xliff:g id="used">%1$d</xliff:g> GB / <xliff:g id="total">%2$d</xliff:g> GB</string>
+    <string name="about_device_maintainer">Maintainer</string>
+    <string name="about_device_maintainer_unknown">Não definido</string>
+    <string name="about_device_ram">RAM</string>
+    <string name="about_device_ram_summary"><xliff:g id="ram">%1$d</xliff:g> GB</string>
+    <string name="about_device_camera">Câmera</string>
+    <string name="about_device_camera_summary">Frontal <xliff:g id="front">%1$s</xliff:g> / Traseira <xliff:g id="rear">%2$s</xliff:g></string>
+    <string name="about_device_camera_front_only">Frontal <xliff:g id="front">%1$s</xliff:g></string>
+    <string name="about_device_camera_rear_only">Traseira <xliff:g id="rear">%1$s</xliff:g></string>
+    <string name="about_device_display">Tela</string>
+    <string name="about_device_details_summary">Conta, informações legais, status do chip, modelo, hardware, IMEI, versão do Android e mais</string>
+</resources>
