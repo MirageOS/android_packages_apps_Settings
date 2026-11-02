@@ -31,4 +31,24 @@
     <string name="personalise_pif_cleared">User PIF data cleared</string>
     <string name="personalise_pif_invalid">Invalid JSON file</string>
     <string name="personalise_pif_read_failed">Failed to read JSON</string>
+
+    <!-- Dynamic Island -->
+    <string name="dynamic_island_category">Dynamic Island</string>
+    <string name="dynamic_island_enabled_title">Dynamic Island</string>
+    <string name="dynamic_island_enabled_summary">Show live activity in a pill at the top of the screen</string>
+    <string name="dynamic_island_expand_title">Expand on tap</string>
+    <string name="dynamic_island_expand_summary">Tap the island to expand the media player, screen recording, alarms and more</string>
+    <string name="dynamic_island_live_updates_title">Live updates</string>
+    <string name="dynamic_island_live_updates_summary">Choose what appears in the island</string>
+    <string name="dynamic_island_live_updates_description">Check information at a glance. See activity, manage calls, control your music and more. Turning this off does not affect regular notifications.</string>
+    <string name="dynamic_island_system_category">System live updates</string>
+    <string name="dynamic_island_apps_category">App live updates</string>
+    <string name="dynamic_island_recorder_title">Recorder</string>
+    <string name="dynamic_island_screen_recorder_title">Screen recorder</string>
+    <string name="dynamic_island_flashlight_title">Flashlight</string>
+    <string name="dynamic_island_calls_title">Calls</string>
+    <string name="dynamic_island_media_title">Media player</string>
+    <string name="dynamic_island_alarms_title">Alarms and timers</string>
+    <string name="dynamic_island_no_apps">No apps support live updates</string>
+    <string name="dynamic_island_illustration_description">Illustration of the Dynamic Island showing an expanded card</string>
 </resources>

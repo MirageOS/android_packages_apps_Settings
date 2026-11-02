@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tela "Live updates" da Dynamic Island (estilo Motorola): atualizações do sistema
+  (gravador, gravador de tela, lanterna, chamadas, player, alarmes) e atualizações por app.
+  As chaves dos switches são as chaves de Settings.System lidas pelo SystemUI.
+  -->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="dynamic_island_live_updates_screen"
+    android:title="@string/dynamic_island_live_updates_title">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="dynamic_island_live_updates_header"
+        android:order="0"
+        android:layout="@layout/dynamic_island_live_updates_header"
+        android:selectable="false"/>
+
+    <PreferenceCategory
+        android:key="dynamic_island_system_category"
+        android:order="10"
+        android:title="@string/dynamic_island_system_category">
+
+        <SwitchPreferenceCompat
+            android:key="dynamic_island_live_recorder"
+            android:icon="@drawable/ic_dynamic_island_recorder"
+            android:title="@string/dynamic_island_recorder_title"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
+
+        <SwitchPreferenceCompat
+            android:key="dynamic_island_live_screen_recorder"
+            android:icon="@drawable/ic_dynamic_island_screen_recorder"
+            android:title="@string/dynamic_island_screen_recorder_title"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
+
+        <SwitchPreferenceCompat
+            android:key="dynamic_island_live_flashlight"
+            android:icon="@drawable/ic_dynamic_island_flashlight"
+            android:title="@string/dynamic_island_flashlight_title"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
+
+        <SwitchPreferenceCompat
+            android:key="dynamic_island_live_calls"
+            android:icon="@drawable/ic_dynamic_island_call"
+            android:title="@string/dynamic_island_calls_title"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
+
+        <SwitchPreferenceCompat
+            android:key="dynamic_island_live_media"
+            android:icon="@drawable/ic_dynamic_island_media"
+            android:title="@string/dynamic_island_media_title"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
+
+        <SwitchPreferenceCompat
+            android:key="dynamic_island_live_alarms"
+            android:icon="@drawable/ic_dynamic_island_alarm"
+            android:title="@string/dynamic_island_alarms_title"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="dynamic_island_apps_category"
+        android:order="20"
+        android:title="@string/dynamic_island_apps_category"
+        settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandAppsPreferenceController"/>
+
+</PreferenceScreen>

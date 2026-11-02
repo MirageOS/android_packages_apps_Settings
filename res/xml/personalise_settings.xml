@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Tela "Personalise": preview do plano de fundo, atalhos de estilo e a seção Integrity
-  (spoof de propriedades certificadas, keybox XML e PIF JSON), antes nas Opções do desenvolvedor.
+  (spoof de propriedades certificadas, keybox XML e PIF JSON), antes nas Opções do desenvolvedor,
+  e a seção Dynamic Island (opções da ilha no estilo Motorola MD3).
   -->
 <PreferenceScreen
     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -14,6 +15,35 @@
         android:order="0"
         android:layout="@layout/personalise_header"
         android:selectable="false"/>
+
+    <PreferenceCategory
+        android:key="personalise_dynamic_island_category"
+        android:order="5"
+        android:title="@string/dynamic_island_category">
+
+        <SwitchPreferenceCompat
+            android:key="dynamic_island_enabled"
+            android:icon="@drawable/ic_dynamic_island"
+            android:title="@string/dynamic_island_enabled_title"
+            android:summary="@string/dynamic_island_enabled_summary"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
+
+        <SwitchPreferenceCompat
+            android:key="dynamic_island_expand_on_tap"
+            android:icon="@drawable/ic_dynamic_island_expand"
+            android:title="@string/dynamic_island_expand_title"
+            android:summary="@string/dynamic_island_expand_summary"
+            android:dependency="dynamic_island_enabled"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
+
+        <Preference
+            android:key="dynamic_island_live_updates"
+            android:icon="@drawable/ic_dynamic_island_live"
+            android:title="@string/dynamic_island_live_updates_title"
+            android:summary="@string/dynamic_island_live_updates_summary"
+            android:fragment="com.android.settings.personalise.dynamicisland.DynamicIslandLiveUpdatesFragment"
+            android:dependency="dynamic_island_enabled"/>
+    </PreferenceCategory>
 
     <PreferenceCategory
         android:key="personalise_integrity_category"

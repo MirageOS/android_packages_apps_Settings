@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Ilustração do topo de "Live updates": celular com a ilha e um cartão expandido. -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="328dp"
+    android:height="180dp"
+    android:viewportWidth="328"
+    android:viewportHeight="180">
+    <!-- Corpo do celular -->
+    <path
+        android:fillColor="#FF2E3040"
+        android:pathData="M64,40a24,24 0 0 1 24,-24h152a24,24 0 0 1 24,24v140H64z"/>
+    <!-- Tela -->
+    <path
+        android:fillColor="#FFA9C7FF"
+        android:pathData="M70,44a18,18 0 0 1 18,-18h152a18,18 0 0 1 18,18v136H70z"/>
+    <!-- Ilha -->
+    <path
+        android:fillColor="#FF000000"
+        android:pathData="M132,34h64a8,8 0 0 1 0,16h-64a8,8 0 0 1 0,-16z"/>
+    <path
+        android:fillColor="#FF1A73E8"
+        android:pathData="M138,36a6,6 0 1 0 0.01,0z"/>
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M176,39h2v6h-2zM181,37h2v10h-2zM186,40h2v4h-2z"/>
+    <!-- Cartão expandido -->
+    <path
+        android:fillColor="#FF1F2127"
+        android:pathData="M82,62a12,12 0 0 1 12,-12h140a12,12 0 0 1 12,12v50a12,12 0 0 1 -12,12H94a12,12 0 0 1 -12,-12z"/>
+    <path
+        android:fillColor="#FFAEB4C4"
+        android:pathData="M110,72h96a3,3 0 0 1 0,6h-96a3,3 0 0 1 0,-6z"/>
+    <path
+        android:fillColor="#FF6E7385"
+        android:pathData="M110,84h70a3,3 0 0 1 0,6h-70a3,3 0 0 1 0,-6z"/>
+    <path
+        android:fillColor="#FF1A73E8"
+        android:pathData="M96,74a8,8 0 1 0 0.01,0z"/>
+    <path
+        android:fillColor="#FF4A4F63"
+        android:pathData="M96,104h120a2,2 0 0 1 0,4h-120a2,2 0 0 1 0,-4z"/>
+    <path
+        android:fillColor="#FF8AB4F8"
+        android:pathData="M96,104h72a2,2 0 0 1 0,4h-72a2,2 0 0 1 0,-4z"/>
+</vector>

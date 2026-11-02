@@ -28,4 +28,24 @@
     <string name="personalise_pif_cleared">Dados do PIF do usuário removidos</string>
     <string name="personalise_pif_invalid">Arquivo JSON inválido</string>
     <string name="personalise_pif_read_failed">Falha ao ler o JSON</string>
+
+    <!-- Dynamic Island -->
+    <string name="dynamic_island_category">Ilha dinâmica</string>
+    <string name="dynamic_island_enabled_title">Ilha dinâmica</string>
+    <string name="dynamic_island_enabled_summary">Mostra atividades em tempo real em uma pílula no topo da tela</string>
+    <string name="dynamic_island_expand_title">Expandir ao tocar</string>
+    <string name="dynamic_island_expand_summary">Toque na ilha para expandir o player de mídia, a gravação de tela, alarmes e mais</string>
+    <string name="dynamic_island_live_updates_title">Atualizações em tempo real</string>
+    <string name="dynamic_island_live_updates_summary">Escolha o que aparece na ilha</string>
+    <string name="dynamic_island_live_updates_description">Confira informações em um piscar de olhos. Veja atividades, gerencie chamadas, controle suas músicas e muito mais. Desativar esse recurso não afeta as notificações comuns.</string>
+    <string name="dynamic_island_system_category">Atualizações do sistema em tempo real</string>
+    <string name="dynamic_island_apps_category">Atualizações de apps em tempo real</string>
+    <string name="dynamic_island_recorder_title">Gravador</string>
+    <string name="dynamic_island_screen_recorder_title">Gravador de tela</string>
+    <string name="dynamic_island_flashlight_title">Lanterna</string>
+    <string name="dynamic_island_calls_title">Ligações</string>
+    <string name="dynamic_island_media_title">Player de mídia</string>
+    <string name="dynamic_island_alarms_title">Alarmes e timers</string>
+    <string name="dynamic_island_no_apps">Nenhum app oferece atualizações em tempo real</string>
+    <string name="dynamic_island_illustration_description">Ilustração da ilha dinâmica mostrando um cartão expandido</string>
 </resources>

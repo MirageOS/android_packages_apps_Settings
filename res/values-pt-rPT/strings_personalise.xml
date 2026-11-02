@@ -28,4 +28,24 @@
     <string name="personalise_pif_cleared">Dados do PIF do usuário removidos</string>
     <string name="personalise_pif_invalid">Ficheiro JSON inválido</string>
     <string name="personalise_pif_read_failed">Falha ao ler o JSON</string>
+
+    <!-- Dynamic Island -->
+    <string name="dynamic_island_category">Ilha dinâmica</string>
+    <string name="dynamic_island_enabled_title">Ilha dinâmica</string>
+    <string name="dynamic_island_enabled_summary">Mostra atividades em tempo real numa pílula no topo do ecrã</string>
+    <string name="dynamic_island_expand_title">Expandir ao tocar</string>
+    <string name="dynamic_island_expand_summary">Toque na ilha para expandir o leitor multimédia, a gravação de ecrã, alarmes e mais</string>
+    <string name="dynamic_island_live_updates_title">Atualizações em tempo real</string>
+    <string name="dynamic_island_live_updates_summary">Escolha o que aparece na ilha</string>
+    <string name="dynamic_island_live_updates_description">Consulte informações num piscar de olhos. Veja atividades, faça a gestão de chamadas, controle as suas músicas e muito mais. Desativar este recurso não afeta as notificações normais.</string>
+    <string name="dynamic_island_system_category">Atualizações do sistema em tempo real</string>
+    <string name="dynamic_island_apps_category">Atualizações de apps em tempo real</string>
+    <string name="dynamic_island_recorder_title">Gravador</string>
+    <string name="dynamic_island_screen_recorder_title">Gravador de ecrã</string>
+    <string name="dynamic_island_flashlight_title">Lanterna</string>
+    <string name="dynamic_island_calls_title">Chamadas</string>
+    <string name="dynamic_island_media_title">Leitor multimédia</string>
+    <string name="dynamic_island_alarms_title">Alarmes e temporizadores</string>
+    <string name="dynamic_island_no_apps">Nenhuma app oferece atualizações em tempo real</string>
+    <string name="dynamic_island_illustration_description">Ilustração da ilha dinâmica mostrando um cartão expandido</string>
 </resources>
