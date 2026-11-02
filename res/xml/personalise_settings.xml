@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tela "Personalise": preview do plano de fundo, atalhos de estilo e a seção Integrity
+  (spoof de propriedades certificadas, keybox XML e PIF JSON), antes nas Opções do desenvolvedor.
+  -->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="personalise_screen"
+    android:title="@string/personalise_title">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="personalise_header"
+        android:order="0"
+        android:layout="@layout/personalise_header"
+        android:selectable="false"/>
+
+    <PreferenceCategory
+        android:key="personalise_integrity_category"
+        android:order="10"
+        android:title="@string/personalise_integrity_category">
+
+        <SwitchPreferenceCompat
+            android:key="certified_props"
+            android:title="@string/cert_overlay_title"
+            android:summary="@string/cert_overlay_summary"
+            settings:controller="com.android.settings.personalise.CertifiedPropsPreferenceController"/>
+
+        <com.android.settings.personalise.KeyboxDataPreference
+            android:key="keybox_data_setting"
+            android:title="@string/keybox_data_title"
+            android:summary="@string/keybox_data_summary"
+            android:defaultValue=""/>
+
+        <com.android.settings.personalise.PifDataPreference
+            android:key="pif_data_setting"
+            android:title="@string/pif_data_title"
+            android:summary="@string/pif_data_summary"
+            android:defaultValue=""/>
+    </PreferenceCategory>
+
+</PreferenceScreen>

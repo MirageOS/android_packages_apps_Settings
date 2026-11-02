@@ -1,4 +1,4 @@
-package com.android.settings.development;
+package com.android.settings.personalise;
 
 import android.app.ActivityManager;
 import android.content.Context;
@@ -17,11 +17,13 @@ import androidx.preference.PreferenceViewHolder;
 
 import com.android.settings.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.StringReader;
 
 public class PifDataPreference extends Preference {
 
@@ -47,11 +49,16 @@ public class PifDataPreference extends Preference {
 
         title.setText(getTitle());
         summary.setText(getSummary());
+        deleteButton.setContentDescription(
+                getContext().getString(R.string.personalise_delete_description));
 
         holder.itemView.setOnClickListener(v -> {
             if (mFilePickerLauncher != null) {
                 Intent intent = new Intent(Intent.ACTION_OPEN_DOCUMENT);
-                intent.setType("application/json");
+                intent.setType("*/*");
+                intent.putExtra(Intent.EXTRA_MIME_TYPES, new String[] {
+                        "application/json", "text/json", "text/plain",
+                        "application/octet-stream"});
                 intent.addCategory(Intent.CATEGORY_OPENABLE);
                 mFilePickerLauncher.launch(intent);
             }
@@ -60,7 +67,8 @@ public class PifDataPreference extends Preference {
         deleteButton.setOnClickListener(v -> {
             Settings.Secure.putString(getContext().getContentResolver(),
                     Settings.Secure.PIF_DATA, null);
-            Toast.makeText(getContext(), "User PIF data cleared", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.personalise_pif_cleared,
+                    Toast.LENGTH_SHORT).show();
             callChangeListener(null);
 
             killPackages();
@@ -68,15 +76,20 @@ public class PifDataPreference extends Preference {
     }
 
     public void handleFileSelected(Uri uri) {
-        if (uri == null ||
-            (!uri.toString().endsWith(".json") &&
-             !"application/json".equals(getContext().getContentResolver().getType(uri)))) {
-            Toast.makeText(getContext(), "Invalid file selected", Toast.LENGTH_SHORT).show();
+        if (!PersonaliseFileUtils.matches(getContext(), uri, ".json",
+                "application/json", "text/json")) {
+            Toast.makeText(getContext(), R.string.personalise_invalid_file,
+                    Toast.LENGTH_SHORT).show();
             return;
         }
 
-        try (InputStream inputStream = getContext().getContentResolver().openInputStream(uri);
-             BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream))) {
+        try (InputStream inputStream = getContext().getContentResolver().openInputStream(uri)) {
+            if (inputStream == null) {
+                Toast.makeText(getContext(), R.string.personalise_pif_read_failed,
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
+            BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 
             StringBuilder jsonContent = new StringBuilder();
             String line;
@@ -85,16 +98,26 @@ public class PifDataPreference extends Preference {
             }
 
             String json = jsonContent.toString();
+            try {
+                new JSONObject(json);
+            } catch (JSONException e) {
+                Log.w(TAG, "Invalid PIF JSON", e);
+                Toast.makeText(getContext(), R.string.personalise_pif_invalid,
+                        Toast.LENGTH_SHORT).show();
+                return;
+            }
 
             Settings.Secure.putString(getContext().getContentResolver(),
                     Settings.Secure.PIF_DATA, json);
-            Toast.makeText(getContext(), "JSON file loaded", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.personalise_pif_loaded,
+                    Toast.LENGTH_SHORT).show();
             callChangeListener(json);
 
             killPackages();
         } catch (IOException e) {
             Log.e(TAG, "Failed to read JSON file", e);
-            Toast.makeText(getContext(), "Failed to read JSON", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), R.string.personalise_pif_read_failed,
+                    Toast.LENGTH_SHORT).show();
         }
     }
 

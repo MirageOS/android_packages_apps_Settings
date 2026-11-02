@@ -25,6 +25,19 @@
         android:key="top_level_account_category"/>
 
     <com.android.settingslib.widget.UntitledPreferenceCategory
+        android:order="-135"
+        android:key="top_level_personalise_category">
+        <com.android.settings.widget.HomepagePreference
+            android:fragment="com.android.settings.personalise.PersonaliseFragment"
+            android:icon="@drawable/ic_homepage_personalise"
+            android:key="top_level_personalise"
+            android:order="-10"
+            android:title="@string/personalise_title"
+            android:summary="@string/personalise_summary"
+            settings:highlightableMenuKey="@string/menu_key_personalise"/>
+    </com.android.settingslib.widget.UntitledPreferenceCategory>
+
+    <com.android.settingslib.widget.UntitledPreferenceCategory
         android:order="-130"
         android:key="top_level_connectivity_category">
         <com.android.settings.widget.HomepagePreference

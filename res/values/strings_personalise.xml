@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Strings da tela Personalise (estilo Motorola) e da seção Integrity. -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <!-- Entry on the Settings homepage and title of the screen -->
+    <string name="personalise_title">Personalise</string>
+    <string name="personalise_summary">Wallpaper, style, lock screen, integrity</string>
+    <string name="personalise_preview_description">Wallpaper and lock screen preview. Tap to change wallpaper and style.</string>
+    <string name="personalise_text_sample" translatable="false">Aa 0123456789</string>
+
+    <!-- Integrity section -->
+    <string name="personalise_integrity_category">Integrity</string>
+
+    <string name="cert_overlay_title">Spoof certified properties</string>
+    <string name="cert_overlay_summary">Spoof Play Integrity certified properties for GMS\nRequires a reboot to apply</string>
+
+    <string name="keybox_data_title">Configure keybox XML</string>
+    <string name="keybox_data_summary">Set the keybox XML used for system-wide key attestation. Tap Delete to reset to the default.</string>
+
+    <string name="pif_data_title">Configure PIF JSON</string>
+    <string name="pif_data_summary">Set the PIF JSON used for the properties of GMS and the Play Store. Tap Delete to revert to the dynamic defaults.</string>
+
+    <string name="personalise_delete_description">Delete</string>
+    <string name="personalise_invalid_file">Invalid file selected</string>
+
+    <string name="personalise_keybox_loaded">XML file loaded</string>
+    <string name="personalise_keybox_cleared">XML data cleared</string>
+    <string name="personalise_keybox_invalid">Invalid XML: missing required data</string>
+    <string name="personalise_keybox_read_failed">Failed to read XML</string>
+
+    <string name="personalise_pif_loaded">JSON file loaded</string>
+    <string name="personalise_pif_cleared">User PIF data cleared</string>
+    <string name="personalise_pif_invalid">Invalid JSON file</string>
+    <string name="personalise_pif_read_failed">Failed to read JSON</string>
+</resources>

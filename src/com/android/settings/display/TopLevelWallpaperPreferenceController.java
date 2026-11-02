@@ -100,16 +100,21 @@ public class TopLevelWallpaperPreferenceController extends BasePreferenceControl
     @Override
     public boolean handlePreferenceTreeClick(Preference preference) {
         if (getPreferenceKey().equals(preference.getKey())) {
-            final Intent intent = new Intent().setComponent(
-                    getComponentName()).putExtra(mWallpaperLaunchExtra, LAUNCHED_SETTINGS);
-            if (areStylesAvailable() && !ActivityEmbeddingUtils.isEmbeddingActivityEnabled(
-                    mContext)) {
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-            }
-            preference.getContext().startActivity(intent);
+            preference.getContext().startActivity(buildLaunchIntent());
             return true;
         }
         return super.handlePreferenceTreeClick(preference);
+    }
+
+    /** Returns the intent that opens the wallpaper (or "Wallpaper and style") picker. */
+    public Intent buildLaunchIntent() {
+        final Intent intent = new Intent().setComponent(
+                getComponentName()).putExtra(mWallpaperLaunchExtra, LAUNCHED_SETTINGS);
+        if (areStylesAvailable() && !ActivityEmbeddingUtils.isEmbeddingActivityEnabled(
+                mContext)) {
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        }
+        return intent;
     }
 
     /** Returns whether Styles & Wallpaper is enabled and available. */

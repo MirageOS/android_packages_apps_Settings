@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Strings da tela Personalise (estilo Motorola) e da seção Integridade (português). -->
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="personalise_title">Personalizar</string>
+    <string name="personalise_summary">Fundo, estilo, ecrã de bloqueio, integridade</string>
+    <string name="personalise_preview_description">Pré-visualização do fundo e do ecrã de bloqueio. Toque para alterar o fundo e o estilo.</string>
+
+    <string name="personalise_integrity_category">Integridade</string>
+
+    <string name="cert_overlay_title">Spoof de propriedades certificadas</string>
+    <string name="cert_overlay_summary">Falsifica as propriedades certificadas do Play Integrity para o GMS\nRequer reinício para aplicar</string>
+
+    <string name="keybox_data_title">Configurar keybox XML</string>
+    <string name="keybox_data_summary">Define o keybox XML usado na atestação de chaves em todo o sistema. Toque em Eliminar para restaurar o padrão.</string>
+
+    <string name="pif_data_title">Configurar JSON PIF</string>
+    <string name="pif_data_summary">Define o JSON PIF usado nas propriedades do GMS e da Play Store. Toque em Eliminar para voltar aos padrões dinâmicos.</string>
+
+    <string name="personalise_delete_description">Eliminar</string>
+    <string name="personalise_invalid_file">Ficheiro inválido</string>
+
+    <string name="personalise_keybox_loaded">Ficheiro XML carregado</string>
+    <string name="personalise_keybox_cleared">Dados do XML removidos</string>
+    <string name="personalise_keybox_invalid">XML inválido: faltam dados obrigatórios</string>
+    <string name="personalise_keybox_read_failed">Falha ao ler o XML</string>
+
+    <string name="personalise_pif_loaded">Ficheiro JSON carregado</string>
+    <string name="personalise_pif_cleared">Dados do PIF do usuário removidos</string>
+    <string name="personalise_pif_invalid">Ficheiro JSON inválido</string>
+    <string name="personalise_pif_read_failed">Falha ao ler o JSON</string>
+</resources>
