@@ -48,4 +48,18 @@
     <string name="dynamic_island_alarms_title">Alarmes e temporizadores</string>
     <string name="dynamic_island_no_apps">Nenhuma app oferece atualizações em tempo real</string>
     <string name="dynamic_island_illustration_description">Ilustração da ilha dinâmica mostrando um cartão expandido</string>
+    <string name="dynamic_island_position_title">Posição e tamanho</string>
+    <string name="dynamic_island_position_summary">Ajuste onde a ilha fica e o tamanho dela</string>
+    <string name="dynamic_island_position_description">A ilha ajusta-se sozinha à câmara do seu dispositivo. Desative o ajuste automático para a mover ou redimensionar como quiser. As alterações aplicam-se de imediato.</string>
+    <string name="dynamic_island_auto_title">Ajustar automaticamente</string>
+    <string name="dynamic_island_auto_summary">Deteta a câmara e ajusta a ilha à mesma</string>
+    <string name="dynamic_island_manual_category">Ajuste manual</string>
+    <string name="dynamic_island_position_x_title">Posição horizontal</string>
+    <string name="dynamic_island_position_y_title">Posição vertical</string>
+    <string name="dynamic_island_size_title">Tamanho</string>
+    <string name="dynamic_island_gap_title">Espaço da câmara</string>
+    <string name="dynamic_island_reset_title">Repor predefinições</string>
+    <string name="dynamic_island_reset_summary">Volta à posição e ao tamanho predefinidos</string>
+    <string name="dynamic_island_value_dp">%1$d dp</string>
+    <string name="dynamic_island_value_percent">%1$d%%</string>
 </resources>

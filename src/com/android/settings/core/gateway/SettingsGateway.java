@@ -183,6 +183,7 @@ import com.android.settings.password.ChooseLockPassword;
 import com.android.settings.password.ChooseLockPattern;
 import com.android.settings.personalise.PersonaliseFragment;
 import com.android.settings.personalise.dynamicisland.DynamicIslandLiveUpdatesFragment;
+import com.android.settings.personalise.dynamicisland.DynamicIslandPositionFragment;
 import com.android.settings.print.PrintJobSettingsFragment;
 import com.android.settings.print.PrintSettingsFragment;
 import com.android.settings.privacy.PrivacyControlsFragment;
@@ -267,6 +268,7 @@ public class SettingsGateway {
             MyDeviceInfoFragment.class.getName(),
             PersonaliseFragment.class.getName(),
             DynamicIslandLiveUpdatesFragment.class.getName(),
+            DynamicIslandPositionFragment.class.getName(),
             MyDeviceInfoDetailsFragment.class.getName(),
             ModuleLicensesDashboard.class.getName(),
             ManageApplications.class.getName(),

@@ -51,4 +51,18 @@
     <string name="dynamic_island_alarms_title">Alarms and timers</string>
     <string name="dynamic_island_no_apps">No apps support live updates</string>
     <string name="dynamic_island_illustration_description">Illustration of the Dynamic Island showing an expanded card</string>
+    <string name="dynamic_island_position_title">Position and size</string>
+    <string name="dynamic_island_position_summary">Adjust where the island sits and how big it is</string>
+    <string name="dynamic_island_position_description">The island fits your device's camera by itself. Turn off automatic adjustment to move or resize it yourself. Changes apply right away.</string>
+    <string name="dynamic_island_auto_title">Adjust automatically</string>
+    <string name="dynamic_island_auto_summary">Detect the camera and fit the island to it</string>
+    <string name="dynamic_island_manual_category">Manual adjustment</string>
+    <string name="dynamic_island_position_x_title">Horizontal position</string>
+    <string name="dynamic_island_position_y_title">Vertical position</string>
+    <string name="dynamic_island_size_title">Size</string>
+    <string name="dynamic_island_gap_title">Camera gap</string>
+    <string name="dynamic_island_reset_title">Restore defaults</string>
+    <string name="dynamic_island_reset_summary">Go back to the default position and size</string>
+    <string name="dynamic_island_value_dp">%1$d dp</string>
+    <string name="dynamic_island_value_percent">%1$d%%</string>
 </resources>

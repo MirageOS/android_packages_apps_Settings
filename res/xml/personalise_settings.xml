@@ -43,6 +43,14 @@
             android:summary="@string/dynamic_island_live_updates_summary"
             android:fragment="com.android.settings.personalise.dynamicisland.DynamicIslandLiveUpdatesFragment"
             android:dependency="dynamic_island_enabled"/>
+
+        <Preference
+            android:key="dynamic_island_position"
+            android:icon="@drawable/ic_dynamic_island_position"
+            android:title="@string/dynamic_island_position_title"
+            android:summary="@string/dynamic_island_position_summary"
+            android:fragment="com.android.settings.personalise.dynamicisland.DynamicIslandPositionFragment"
+            android:dependency="dynamic_island_enabled"/>
     </PreferenceCategory>
 
     <PreferenceCategory

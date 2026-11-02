@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Tela "Posição e tamanho" da Dynamic Island: ajuste automático pelo recorte da câmera ou ajuste
+  manual (horizontal, vertical, tamanho e espaço da câmera). As chaves são as de Settings.System
+  lidas pelo SystemUI; os sliders só ficam ativos com o ajuste automático desligado.
+  -->
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:settings="http://schemas.android.com/apk/res-auto"
+    android:key="dynamic_island_position_screen"
+    android:title="@string/dynamic_island_position_title">
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="dynamic_island_position_header"
+        android:order="0"
+        android:layout="@layout/dynamic_island_position_header"
+        android:selectable="false"/>
+
+    <PreferenceCategory
+        android:key="dynamic_island_auto_position_category"
+        android:order="10">
+
+        <SwitchPreferenceCompat
+            android:key="dynamic_island_auto_position"
+            android:icon="@drawable/ic_dynamic_island_auto"
+            android:title="@string/dynamic_island_auto_title"
+            android:summary="@string/dynamic_island_auto_summary"
+            android:disableDependentsState="true"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="dynamic_island_manual_category"
+        android:order="20"
+        android:title="@string/dynamic_island_manual_category">
+
+        <com.android.settingslib.widget.SliderPreference
+            android:key="dynamic_island_position_x"
+            android:persistent="false"
+            android:title="@string/dynamic_island_position_x_title"
+            android:dependency="dynamic_island_auto_position"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandSliderPreferenceController"/>
+        <com.android.settingslib.widget.SliderPreference
+            android:key="dynamic_island_position_y"
+            android:persistent="false"
+            android:title="@string/dynamic_island_position_y_title"
+            android:dependency="dynamic_island_auto_position"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandSliderPreferenceController"/>
+        <com.android.settingslib.widget.SliderPreference
+            android:key="dynamic_island_size"
+            android:persistent="false"
+            android:title="@string/dynamic_island_size_title"
+            android:dependency="dynamic_island_auto_position"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandSliderPreferenceController"/>
+        <com.android.settingslib.widget.SliderPreference
+            android:key="dynamic_island_camera_gap"
+            android:persistent="false"
+            android:title="@string/dynamic_island_gap_title"
+            android:dependency="dynamic_island_auto_position"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandSliderPreferenceController"/>
+
+        <Preference
+            android:key="dynamic_island_reset_position"
+            android:icon="@drawable/ic_dynamic_island_reset"
+            android:title="@string/dynamic_island_reset_title"
+            android:summary="@string/dynamic_island_reset_summary"
+            android:dependency="dynamic_island_auto_position"
+            settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandResetPreferenceController"/>
+    </PreferenceCategory>
+
+</PreferenceScreen>
