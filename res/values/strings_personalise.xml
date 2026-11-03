@@ -65,4 +65,11 @@
     <string name="dynamic_island_reset_summary">Go back to the default position and size</string>
     <string name="dynamic_island_value_dp">%1$d dp</string>
     <string name="dynamic_island_value_percent">%1$d%%</string>
+
+    <!-- Quick Settings style -->
+    <string name="qs_style_category">Quick Settings</string>
+    <string name="qs_style_motorola_title">Motorola style</string>
+    <string name="qs_style_motorola_summary">Use the Motorola-style Quick Settings layout, with volume and brightness sliders</string>
+    <string name="qs_show_labels_title">Show labels</string>
+    <string name="qs_show_labels_summary">Show the name of each tile</string>
 </resources>

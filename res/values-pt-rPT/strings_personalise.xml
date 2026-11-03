@@ -62,4 +62,11 @@
     <string name="dynamic_island_reset_summary">Volta à posição e ao tamanho predefinidos</string>
     <string name="dynamic_island_value_dp">%1$d dp</string>
     <string name="dynamic_island_value_percent">%1$d%%</string>
+
+    <!-- Quick Settings style -->
+    <string name="qs_style_category">Definições rápidas</string>
+    <string name="qs_style_motorola_title">Estilo Motorola</string>
+    <string name="qs_style_motorola_summary">Usa o esquema das Definições rápidas da Motorola, com sliders de volume e brilho</string>
+    <string name="qs_show_labels_title">Mostrar etiquetas</string>
+    <string name="qs_show_labels_summary">Mostra o nome de cada mosaico</string>
 </resources>

@@ -54,6 +54,26 @@
     </PreferenceCategory>
 
     <PreferenceCategory
+        android:key="personalise_qs_category"
+        android:order="7"
+        android:title="@string/qs_style_category">
+
+        <SwitchPreferenceCompat
+            android:key="qs_style_motorola"
+            android:icon="@drawable/ic_qs_style"
+            android:title="@string/qs_style_motorola_title"
+            android:summary="@string/qs_style_motorola_summary"
+            settings:controller="com.android.settings.personalise.qs.QsStyleTogglePreferenceController"/>
+
+        <SwitchPreferenceCompat
+            android:key="qs_show_labels"
+            android:icon="@drawable/ic_qs_labels"
+            android:title="@string/qs_show_labels_title"
+            android:summary="@string/qs_show_labels_summary"
+            settings:controller="com.android.settings.personalise.qs.QsStyleTogglePreferenceController"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:key="personalise_integrity_category"
         android:order="10"
         android:title="@string/personalise_integrity_category">
