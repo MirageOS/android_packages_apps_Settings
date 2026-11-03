@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="settingslib_materialColorPrimary">@android:color/system_accent1_600</color>
+    <color name="settingslib_materialColorOnPrimary">@android:color/system_accent1_0</color>
+    <color name="settingslib_materialColorSurfaceContainerHigh">@android:color/system_surface_container_high_light</color>
+    <color name="settingslib_materialColorOnSurfaceVariant">@android:color/system_on_surface_variant_light</color>
+</resources>
