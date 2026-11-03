@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.android.settings.accessibility.colorandmotion.ui
+package com.android.settings.display
 
 import android.content.Context
 import android.os.PowerManager
