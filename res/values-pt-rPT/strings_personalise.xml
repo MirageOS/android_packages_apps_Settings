@@ -69,4 +69,11 @@
     <string name="qs_style_motorola_summary">Usa o esquema das Definições rápidas da Motorola, com sliders de volume e brilho</string>
     <string name="qs_show_labels_title">Mostrar etiquetas</string>
     <string name="qs_show_labels_summary">Mostra o nome de cada mosaico</string>
+
+    <!-- Banners da tela Personalise -->
+    <string name="personalise_banner_island_title">Atividade em tempo real, a um toque</string>
+    <string name="personalise_banner_island_desc">Chamadas, música, temporizadores e gravações aparecem numa pílula no topo do ecrã. Toque nela para expandir.</string>
+    <string name="personalise_banner_qs_title">Definições rápidas à sua maneira</string>
+    <string name="personalise_banner_qs_desc">Use o layout da Motorola com sliders e escolha se os mosaicos mostram o nome.</string>
+    <string name="personalise_banner_integrity_desc">Simule propriedades certificadas e use os seus próprios ficheiros de keybox e PIF para que as apps que verificam a integridade do dispositivo continuem a funcionar.</string>
 </resources>

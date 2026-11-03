@@ -72,4 +72,11 @@
     <string name="qs_style_motorola_summary">Use the Motorola-style Quick Settings layout, with volume and brightness sliders</string>
     <string name="qs_show_labels_title">Show labels</string>
     <string name="qs_show_labels_summary">Show the name of each tile</string>
+
+    <!-- Banners da tela Personalise -->
+    <string name="personalise_banner_island_title">Live activity, one tap away</string>
+    <string name="personalise_banner_island_desc">Calls, music, timers and recordings show up in a pill at the top of the screen. Tap it to expand.</string>
+    <string name="personalise_banner_qs_title">Quick Settings, your way</string>
+    <string name="personalise_banner_qs_desc">Use the Motorola layout with sliders and choose whether tiles show their names.</string>
+    <string name="personalise_banner_integrity_desc">Spoof certified properties and set your own keybox and PIF files so apps that check device integrity keep working.</string>
 </resources>

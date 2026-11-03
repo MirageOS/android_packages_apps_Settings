@@ -44,11 +44,15 @@ public class PersonaliseFragment extends DashboardFragment {
     private static final String TAG = "PersonaliseFragment";
 
     private static final String KEY_HEADER = "personalise_header";
+    private static final String KEY_BANNER_ISLAND = "personalise_banner_island";
+    private static final String KEY_BANNER_QS = "personalise_banner_qs";
+    private static final String KEY_BANNER_INTEGRITY = "personalise_banner_integrity";
     private static final String KEY_KEYBOX = "keybox_data_setting";
     private static final String KEY_PIF = "pif_data_setting";
 
     private ActivityResultLauncher<Intent> mKeyboxFilePickerLauncher;
     private ActivityResultLauncher<Intent> mPifFilePickerLauncher;
+    private final PersonaliseBanners mBanners = new PersonaliseBanners();
 
     @Override
     public int getMetricsCategory() {
@@ -116,6 +120,20 @@ public class PersonaliseFragment extends DashboardFragment {
         if (root != null) {
             PersonaliseHeader.bind(this, root, getMetricsCategory());
         }
+        mBanners.start(findBanner(KEY_BANNER_ISLAND, R.id.banner_island_root),
+                findBanner(KEY_BANNER_QS, R.id.banner_qs_root),
+                findBanner(KEY_BANNER_INTEGRITY, R.id.banner_integrity_root));
+    }
+
+    @Override
+    public void onPause() {
+        mBanners.stop();
+        super.onPause();
+    }
+
+    private View findBanner(String key, int rootId) {
+        final LayoutPreference banner = findPreference(key);
+        return banner == null ? null : banner.findViewById(rootId);
     }
 
     private static Uri getResultUri(int resultCode, Intent data) {

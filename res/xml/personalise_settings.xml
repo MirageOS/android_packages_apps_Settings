@@ -16,6 +16,12 @@
         android:layout="@layout/personalise_header"
         android:selectable="false"/>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="personalise_banner_island"
+        android:order="3"
+        android:layout="@layout/personalise_banner_island"
+        android:selectable="false"/>
+
     <PreferenceCategory
         android:key="personalise_dynamic_island_category"
         android:order="5"
@@ -57,6 +63,12 @@
             android:dependency="dynamic_island_enabled"/>
     </PreferenceCategory>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="personalise_banner_qs"
+        android:order="6"
+        android:layout="@layout/personalise_banner_qs"
+        android:selectable="false"/>
+
     <PreferenceCategory
         android:key="personalise_qs_category"
         android:order="7"
@@ -78,6 +90,12 @@
             android:summary="@string/qs_show_labels_summary"
             settings:controller="com.android.settings.personalise.qs.QsStyleTogglePreferenceController"/>
     </PreferenceCategory>
+
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="personalise_banner_integrity"
+        android:order="9"
+        android:layout="@layout/personalise_banner_integrity"
+        android:selectable="false"/>
 
     <PreferenceCategory
         android:key="personalise_integrity_category"

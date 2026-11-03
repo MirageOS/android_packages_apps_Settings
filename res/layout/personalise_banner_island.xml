@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Banner animado da Dynamic Island: a pílula abre e fecha mostrando mídia, alarme e chamada. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="16dp"
+    android:paddingEnd="16dp"
+    android:paddingTop="8dp"
+    android:paddingBottom="8dp">
+    <FrameLayout
+        android:id="@+id/banner_island_root"
+        android:layout_width="match_parent"
+        android:layout_height="176dp"
+        android:background="@drawable/personalise_banner_bg"
+        android:clipToOutline="true">
+        <ImageView
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="-44dp"
+            android:layout_marginBottom="-56dp"
+            android:alpha="0.14"
+            android:src="@drawable/personalise_shape_flower"
+            android:tint="#FFFFFFFF"
+            android:importantForAccessibility="no"/>
+
+        <ImageView
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_gravity="top|start"
+            android:layout_marginTop="-18dp"
+            android:layout_marginStart="-14dp"
+            android:alpha="0.1"
+            android:src="@drawable/personalise_shape_cookie"
+            android:tint="#FFFFFFFF"
+            android:importantForAccessibility="no"/>
+
+        <FrameLayout
+            android:id="@+id/banner_island_pill"
+            android:layout_width="92dp"
+            android:layout_height="36dp"
+            android:layout_gravity="top|center_horizontal"
+            android:layout_marginTop="22dp"
+            android:background="@drawable/personalise_banner_island_bg"
+            android:importantForAccessibility="no">
+            <LinearLayout
+                android:id="@+id/banner_island_content"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:alpha="0">
+                <ImageView
+                    android:id="@+id/banner_island_icon"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_dynamic_island_media"
+                    android:tint="#FFFFFFFF"
+                    android:importantForAccessibility="no"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="16dp"
+                    android:layout_marginStart="12dp"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+                    <View
+                        android:id="@+id/banner_island_bar_1"
+                        android:layout_width="3dp"
+                        android:layout_height="14dp"
+                        android:background="@drawable/personalise_banner_bar"/>
+
+                    <View
+                        android:id="@+id/banner_island_bar_2"
+                        android:layout_width="3dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="3dp"
+                        android:background="@drawable/personalise_banner_bar"/>
+
+                    <View
+                        android:id="@+id/banner_island_bar_3"
+                        android:layout_width="3dp"
+                        android:layout_height="14dp"
+                        android:layout_marginStart="3dp"
+                        android:background="@drawable/personalise_banner_bar"/>
+                </LinearLayout>
+            </LinearLayout>
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|start"
+            android:orientation="vertical"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="20dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/personalise_banner_island_title"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/settingslib_materialColorOnPrimaryContainer"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="@string/personalise_banner_island_desc"
+                android:textSize="14sp"
+                android:alpha="0.8"
+                android:textColor="@color/settingslib_materialColorOnPrimaryContainer"/>
+        </LinearLayout>
+    </FrameLayout>
+</FrameLayout>
