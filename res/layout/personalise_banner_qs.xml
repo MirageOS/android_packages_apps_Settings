@@ -10,7 +10,8 @@
     <FrameLayout
         android:id="@+id/banner_qs_root"
         android:layout_width="match_parent"
-        android:layout_height="176dp"
+        android:layout_height="wrap_content"
+        android:minHeight="176dp"
         android:background="@drawable/personalise_banner_bg_alt"
         android:clipToOutline="true">
         <ImageView
@@ -122,6 +123,7 @@
             android:orientation="vertical"
             android:paddingStart="24dp"
             android:paddingEnd="24dp"
+            android:paddingTop="84dp"
             android:paddingBottom="20dp">
             <TextView
                 android:layout_width="match_parent"

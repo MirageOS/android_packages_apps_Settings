@@ -2,6 +2,7 @@
 <!--
 Header da tela "Personalise" (estilo Motorola / MD3 Expressive):
 preview do plano de fundo + atalhos para estilo, tema escuro, texto, tela de bloqueio e tela.
+O preview e a coluna da direita têm altura fixa (328dp) para a imagem do wallpaper não esticar o header.
 Cada atalho tem um chip em forma própria e um shape grande, translúcido, no canto. Os ícones ficam
 no topo e os textos embaixo, então tudo alinha igual entre os cards.
 -->
@@ -23,9 +24,8 @@ no topo e os textos embaixo, então tudo alinha igual entre os cards.
         <FrameLayout
             android:id="@+id/personalise_preview"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="328dp"
             android:layout_weight="1"
-            android:minHeight="304dp"
             android:layout_marginEnd="4dp"
             android:background="@drawable/personalise_hero_bg"
             android:clipToOutline="true"
@@ -36,6 +36,7 @@ no topo e os textos embaixo, então tudo alinha igual entre os cards.
                 android:id="@+id/personalise_preview_image"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:adjustViewBounds="false"
                 android:scaleType="centerCrop"
                 android:importantForAccessibility="no"/>
 
@@ -48,7 +49,7 @@ no topo e os textos embaixo, então tudo alinha igual entre os cards.
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
-                android:layout_marginTop="40dp"
+                android:layout_marginTop="32dp"
                 android:orientation="vertical"
                 android:gravity="center_horizontal"
                 android:importantForAccessibility="no">
@@ -60,7 +61,7 @@ no topo e os textos embaixo, então tudo alinha igual entre os cards.
                     android:gravity="center"
                     android:lineSpacingMultiplier="0.8"
                     android:fontFamily="sans-serif-light"
-                    android:textSize="76sp"
+                    android:textSize="64sp"
                     android:textColor="#FFFFFFFF"/>
 
                 <TextClock
@@ -96,7 +97,7 @@ no topo e os textos embaixo, então tudo alinha igual entre os cards.
         <!-- Coluna da direita: mesma altura do preview, dois cards iguais -->
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="328dp"
             android:layout_weight="1"
             android:layout_marginStart="4dp"
             android:orientation="vertical">
@@ -161,7 +162,7 @@ no topo e os textos embaixo, então tudo alinha igual entre os cards.
                         android:layout_height="wrap_content"
                         android:layout_marginTop="2dp"
                         android:ellipsize="end"
-                        android:maxLines="2"
+                        android:maxLines="1"
                         android:textSize="14sp"
                         android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
                 </LinearLayout>
@@ -233,7 +234,7 @@ no topo e os textos embaixo, então tudo alinha igual entre os cards.
                         android:layout_marginTop="2dp"
                         android:text="@string/personalise_text_sample"
                         android:ellipsize="end"
-                        android:maxLines="2"
+                        android:maxLines="1"
                         android:textSize="14sp"
                         android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
                 </LinearLayout>
