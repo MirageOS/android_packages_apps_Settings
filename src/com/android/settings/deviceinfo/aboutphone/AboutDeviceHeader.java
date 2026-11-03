@@ -33,6 +33,7 @@ import android.util.Log;
 import android.util.Size;
 import android.view.Display;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.android.settings.R;
@@ -62,10 +63,11 @@ public final class AboutDeviceHeader {
 
     /** Fills the header views. {@code onDetails} opens the full device details screen. */
     public static void bind(Context context, View root, Runnable onDetails) {
-        // Banner
+        // Banner: current wallpaper behind the ROM name and Android version
         text(root, R.id.about_android_version,
                 context.getString(R.string.about_device_android_version,
                         Build.VERSION.RELEASE));
+        AboutBannerWallpaper.bind(context, root);
 
         // Device name tile
         String name = Settings.Global.getString(context.getContentResolver(),
@@ -100,10 +102,15 @@ public final class AboutDeviceHeader {
         // Storage and camera touch the disk / camera service: do it off the UI thread
         final Context appContext = context.getApplicationContext();
         new Thread(() -> {
-            final String storage = getStorageSummary(appContext);
+            final long[] usage = getStorageUsage(appContext);
+            final String storage = getStorageSummary(appContext, usage);
             final String camera = getCameraSummary(appContext);
             root.post(() -> {
                 text(root, R.id.about_storage_summary, storage);
+                final ProgressBar bar = root.findViewById(R.id.about_storage_progress);
+                if (bar != null && usage != null && usage[1] > 0) {
+                    bar.setProgress((int) Math.round(100.0 * usage[0] / usage[1]));
+                }
                 final View cameraView = root.findViewById(R.id.about_camera_summary);
                 if (cameraView != null) {
                     ((TextView) cameraView).setText(camera);
@@ -144,19 +151,26 @@ public final class AboutDeviceHeader {
         return nf.format(w) + " \u00D7 " + nf.format(h);
     }
 
-    private static String getStorageSummary(Context context) {
+    /** Returns {used, total} in bytes, or null if it can't be read. */
+    private static long[] getStorageUsage(Context context) {
         try {
             final long total = context.getSystemService(StorageManager.class)
                     .getPrimaryStorageSize();
             final long free = new StatFs(Environment.getDataDirectory().getPath())
                     .getAvailableBytes();
-            final long used = Math.max(0, Math.min(total, total - free));
-            return context.getString(R.string.about_device_storage_summary,
-                    Math.round(used / 1_000_000_000.0), Math.round(total / 1_000_000_000.0));
+            return new long[] {Math.max(0, Math.min(total, total - free)), total};
         } catch (Exception e) {
             Log.w(TAG, "Unable to read storage size", e);
+            return null;
+        }
+    }
+
+    private static String getStorageSummary(Context context, long[] usage) {
+        if (usage == null) {
             return "";
         }
+        return context.getString(R.string.about_device_storage_summary,
+                Math.round(usage[0] / 1_000_000_000.0), Math.round(usage[1] / 1_000_000_000.0));
     }
 
     private static String getCameraSummary(Context context) {

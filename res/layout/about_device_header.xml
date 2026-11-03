@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
   Header da tela "Sobre o dispositivo" (estilo Motorola / MD3 Expressive).
+  O banner usa o plano de fundo atual; o scrim é calculado em AboutDeviceHeader para o texto
+  branco manter contraste. Os cards seguem o mesmo padrão da tela Personalise: chip com forma
+  própria no topo, texto embaixo e um shape translúcido no canto.
   -->
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/about_device_header_root"
@@ -11,38 +14,65 @@
     android:paddingEnd="16dp"
     android:paddingTop="8dp"
     android:paddingBottom="8dp">
-
-    <!-- Banner -->
+    <!-- Banner com o plano de fundo atual -->
     <FrameLayout
+        android:id="@+id/about_banner"
         android:layout_width="match_parent"
-        android:layout_height="190dp"
+        android:layout_height="200dp"
         android:background="@drawable/about_banner_bg"
         android:clipToOutline="true">
-
         <ImageView
+            android:id="@+id/about_banner_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/about_banner"
             android:scaleType="centerCrop"
             android:importantForAccessibility="no"/>
 
         <View
+            android:id="@+id/about_banner_scrim"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@drawable/about_banner_scrim"/>
+
+        <ImageView
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="-36dp"
+            android:layout_marginEnd="-28dp"
+            android:src="@drawable/personalise_shape_flower"
+            android:tint="#FFFFFFFF"
+            android:alpha="0.16"
+            android:importantForAccessibility="no"/>
+
+        <ImageView
+            android:layout_width="56dp"
+            android:layout_height="56dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="64dp"
+            android:src="@drawable/personalise_shape_cookie"
+            android:tint="#FFFFFFFF"
+            android:alpha="0.12"
+            android:importantForAccessibility="no"/>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="bottom|start"
             android:orientation="vertical"
-            android:padding="24dp">
-
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingBottom="22dp">
             <TextView
                 android:id="@+id/about_rom_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/about_device_rom_name"
+                android:shadowColor="#99000000"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="8"
                 android:textSize="40sp"
                 android:textStyle="bold"
                 android:textColor="#FFFFFFFF"/>
@@ -51,190 +81,382 @@
                 android:id="@+id/about_android_version"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:shadowColor="#99000000"
+                android:shadowDx="0"
+                android:shadowDy="2"
+                android:shadowRadius="8"
                 android:textSize="16sp"
                 android:textColor="#FFFFFFFF"/>
         </LinearLayout>
     </FrameLayout>
 
-    <!-- Tiles: nome do dispositivo + armazenamento -->
+    <!-- Nome do dispositivo + armazenamento -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:orientation="horizontal">
-
-        <LinearLayout
+        <FrameLayout
             android:id="@+id/about_tile_device"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:minHeight="140dp"
-            android:orientation="vertical"
-            android:padding="20dp"
+            android:layout_marginEnd="4dp"
+            android:minHeight="148dp"
             android:background="@drawable/about_tile_bg"
+            android:clipToOutline="true"
             android:clickable="true"
-            android:focusable="true"
-            android:layout_marginEnd="4dp">
-
+            android:focusable="true">
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_marginBottom="16dp"
-                android:src="@drawable/ic_about_phone"
-                android:tint="@color/settingslib_materialColorPrimary"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="-30dp"
+                android:layout_marginEnd="-30dp"
+                android:alpha="0.45"
+                android:src="@drawable/personalise_shape_flower"
+                android:tint="@color/settingslib_materialColorSecondaryContainer"
                 android:importantForAccessibility="no"/>
 
-            <TextView
-                android:id="@+id/about_device_name_title"
-                android:text="@string/about_device_name_tile"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/settingslib_materialColorOnSurface"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <FrameLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/personalise_shape_cookie"
+                    android:backgroundTint="@color/settingslib_materialColorSecondaryContainer">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_about_phone"
+                        android:tint="@color/settingslib_materialColorOnSecondaryContainer"
+                        android:importantForAccessibility="no"/>
+                </FrameLayout>
 
-            <TextView
-                android:id="@+id/about_device_name_summary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
-        </LinearLayout>
-        <LinearLayout
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/about_device_name_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/about_device_name_tile"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/settingslib_materialColorOnSurface"/>
+
+                <TextView
+                    android:id="@+id/about_device_name_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
+            </LinearLayout>
+        </FrameLayout>
+
+        <FrameLayout
             android:id="@+id/about_tile_storage"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:minHeight="140dp"
-            android:orientation="vertical"
-            android:padding="20dp"
+            android:layout_marginStart="4dp"
+            android:minHeight="148dp"
             android:background="@drawable/about_tile_bg"
+            android:clipToOutline="true"
             android:clickable="true"
-            android:focusable="true"
-            android:layout_marginStart="4dp">
-
+            android:focusable="true">
             <ImageView
-                android:layout_width="36dp"
-                android:layout_height="36dp"
-                android:layout_marginBottom="16dp"
-                android:src="@drawable/ic_about_storage"
-                android:tint="@color/settingslib_materialColorPrimary"
+                android:layout_width="104dp"
+                android:layout_height="104dp"
+                android:layout_gravity="top|end"
+                android:layout_marginTop="-30dp"
+                android:layout_marginEnd="-30dp"
+                android:alpha="0.45"
+                android:src="@drawable/personalise_shape_clover"
+                android:tint="@color/settingslib_materialColorPrimaryContainer"
                 android:importantForAccessibility="no"/>
 
-            <TextView
-                android:id="@+id/about_storage_title"
-                android:text="@string/about_device_storage"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/settingslib_materialColorOnSurface"/>
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="20dp">
+                <FrameLayout
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:background="@drawable/personalise_shape_squircle"
+                    android:backgroundTint="@color/settingslib_materialColorPrimaryContainer">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_about_storage"
+                        android:tint="@color/settingslib_materialColorOnPrimaryContainer"
+                        android:importantForAccessibility="no"/>
+                </FrameLayout>
 
-            <TextView
-                android:id="@+id/about_storage_summary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
-        </LinearLayout>
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"/>
+
+                <TextView
+                    android:id="@+id/about_storage_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="@string/about_device_storage"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/settingslib_materialColorOnSurface"/>
+
+                <TextView
+                    android:id="@+id/about_storage_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
+
+                <ProgressBar
+                    android:id="@+id/about_storage_progress"
+                    style="?android:attr/progressBarStyleHorizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:layout_marginTop="10dp"
+                    android:max="100"
+                    android:progressDrawable="@drawable/about_storage_progress"
+                    android:importantForAccessibility="no"/>
+            </LinearLayout>
+        </FrameLayout>
     </LinearLayout>
 
     <!-- Maintainer -->
-    <LinearLayout
+    <FrameLayout
         android:id="@+id/about_tile_maintainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="20dp"
-        android:background="@drawable/about_card_bg">
-
+        android:minHeight="96dp"
+        android:background="@drawable/about_card_bg"
+        android:clipToOutline="true">
         <ImageView
-            android:layout_width="36dp"
-            android:layout_height="36dp"
-            android:layout_marginEnd="16dp"
-            android:src="@drawable/ic_about_maintainer"
-            android:tint="@color/settingslib_materialColorPrimary"
+            android:layout_width="128dp"
+            android:layout_height="128dp"
+            android:layout_gravity="center_vertical|end"
+            android:layout_marginTop="0dp"
+            android:layout_marginEnd="-40dp"
+            android:alpha="0.45"
+            android:src="@drawable/personalise_shape_flower"
+            android:tint="@color/settingslib_materialColorTertiary"
             android:importantForAccessibility="no"/>
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="20dp">
+            <FrameLayout
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/personalise_shape_clover"
+                android:backgroundTint="@color/settingslib_materialColorTertiary">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_about_maintainer"
+                    android:tint="@color/settingslib_materialColorOnPrimary"
+                    android:importantForAccessibility="no"/>
+            </FrameLayout>
 
-            <TextView
-                android:layout_width="match_parent"
+            <LinearLayout
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="@string/about_device_maintainer"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="@color/settingslib_materialColorOnSurface"/>
+                android:layout_weight="1"
+                android:layout_marginStart="16dp"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/about_device_maintainer"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/settingslib_materialColorOnSurface"/>
 
-            <TextView
-                android:id="@+id/about_maintainer_summary"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textSize="14sp"
-                android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
+                <TextView
+                    android:id="@+id/about_maintainer_summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:textSize="14sp"
+                    android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
+            </LinearLayout>
         </LinearLayout>
-    </LinearLayout>
+    </FrameLayout>
 
-    <!-- Specs: RAM, câmera, tela -->
-    <LinearLayout
+    <!-- Especificações -->
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:orientation="vertical"
-        android:padding="24dp"
-        android:background="@drawable/about_card_bg">
+        android:background="@drawable/about_card_bg"
+        android:clipToOutline="true">
+        <ImageView
+            android:layout_width="112dp"
+            android:layout_height="112dp"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="-36dp"
+            android:layout_marginEnd="-36dp"
+            android:alpha="0.45"
+            android:src="@drawable/personalise_shape_cookie"
+            android:tint="@color/settingslib_materialColorSecondaryContainer"
+            android:importantForAccessibility="no"/>
 
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="0dp"
-            android:text="@string/about_device_ram"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/settingslib_materialColorOnSurface"/>
+            android:orientation="vertical"
+            android:padding="20dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/personalise_shape_squircle"
+                    android:backgroundTint="@color/settingslib_materialColorSecondaryContainer">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_about_ram"
+                        android:tint="@color/settingslib_materialColorOnSecondaryContainer"
+                        android:importantForAccessibility="no"/>
+                </FrameLayout>
 
-        <TextView
-            android:id="@+id/about_ram_summary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/about_device_camera"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/settingslib_materialColorOnSurface"/>
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_device_ram"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/settingslib_materialColorOnSurface"/>
 
-        <TextView
-            android:id="@+id/about_camera_summary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="@string/about_device_display"
-            android:textSize="16sp"
-            android:textStyle="bold"
-            android:textColor="@color/settingslib_materialColorOnSurface"/>
+                    <TextView
+                        android:id="@+id/about_ram_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textSize="14sp"
+                        android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
+                </LinearLayout>
+            </LinearLayout>
 
-        <TextView
-            android:id="@+id/about_display_summary"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="14sp"
-            android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
-    </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/personalise_shape_flower"
+                    android:backgroundTint="@color/settingslib_materialColorPrimaryContainer">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_about_camera"
+                        android:tint="@color/settingslib_materialColorOnPrimaryContainer"
+                        android:importantForAccessibility="no"/>
+                </FrameLayout>
 
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_device_camera"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/settingslib_materialColorOnSurface"/>
+
+                    <TextView
+                        android:id="@+id/about_camera_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textSize="14sp"
+                        android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+                <FrameLayout
+                    android:layout_width="44dp"
+                    android:layout_height="44dp"
+                    android:background="@drawable/personalise_shape_cookie"
+                    android:backgroundTint="@color/settingslib_materialColorTertiary">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_settings_display_filled"
+                        android:tint="@color/settingslib_materialColorOnPrimary"
+                        android:importantForAccessibility="no"/>
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="16dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/about_device_display"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/settingslib_materialColorOnSurface"/>
+
+                    <TextView
+                        android:id="@+id/about_display_summary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textSize="14sp"
+                        android:textColor="@color/settingslib_materialColorOnSurfaceVariant"/>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </FrameLayout>
 </LinearLayout>
