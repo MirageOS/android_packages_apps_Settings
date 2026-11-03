@@ -23,6 +23,7 @@
 
         <SwitchPreferenceCompat
             android:key="dynamic_island_enabled"
+            android:layout="@layout/personalise_preference_cookie"
             android:icon="@drawable/ic_dynamic_island"
             android:title="@string/dynamic_island_enabled_title"
             android:summary="@string/dynamic_island_enabled_summary"
@@ -30,6 +31,7 @@
 
         <SwitchPreferenceCompat
             android:key="dynamic_island_expand_on_tap"
+            android:layout="@layout/personalise_preference_squircle"
             android:icon="@drawable/ic_dynamic_island_expand"
             android:title="@string/dynamic_island_expand_title"
             android:summary="@string/dynamic_island_expand_summary"
@@ -38,6 +40,7 @@
 
         <Preference
             android:key="dynamic_island_live_updates"
+            android:layout="@layout/personalise_preference_flower"
             android:icon="@drawable/ic_dynamic_island_live"
             android:title="@string/dynamic_island_live_updates_title"
             android:summary="@string/dynamic_island_live_updates_summary"
@@ -46,6 +49,7 @@
 
         <Preference
             android:key="dynamic_island_position"
+            android:layout="@layout/personalise_preference_clover"
             android:icon="@drawable/ic_dynamic_island_position"
             android:title="@string/dynamic_island_position_title"
             android:summary="@string/dynamic_island_position_summary"
@@ -60,6 +64,7 @@
 
         <SwitchPreferenceCompat
             android:key="qs_style_motorola"
+            android:layout="@layout/personalise_preference_flower"
             android:icon="@drawable/ic_qs_style"
             android:title="@string/qs_style_motorola_title"
             android:summary="@string/qs_style_motorola_summary"
@@ -67,6 +72,7 @@
 
         <SwitchPreferenceCompat
             android:key="qs_show_labels"
+            android:layout="@layout/personalise_preference_cookie"
             android:icon="@drawable/ic_qs_labels"
             android:title="@string/qs_show_labels_title"
             android:summary="@string/qs_show_labels_summary"

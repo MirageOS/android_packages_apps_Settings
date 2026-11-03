@@ -23,36 +23,42 @@
 
         <SwitchPreferenceCompat
             android:key="dynamic_island_live_recorder"
+            android:layout="@layout/personalise_preference_cookie"
             android:icon="@drawable/ic_dynamic_island_recorder"
             android:title="@string/dynamic_island_recorder_title"
             settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
 
         <SwitchPreferenceCompat
             android:key="dynamic_island_live_screen_recorder"
+            android:layout="@layout/personalise_preference_squircle"
             android:icon="@drawable/ic_dynamic_island_screen_recorder"
             android:title="@string/dynamic_island_screen_recorder_title"
             settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
 
         <SwitchPreferenceCompat
             android:key="dynamic_island_live_flashlight"
+            android:layout="@layout/personalise_preference_flower"
             android:icon="@drawable/ic_dynamic_island_flashlight"
             android:title="@string/dynamic_island_flashlight_title"
             settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
 
         <SwitchPreferenceCompat
             android:key="dynamic_island_live_calls"
+            android:layout="@layout/personalise_preference_clover"
             android:icon="@drawable/ic_dynamic_island_call"
             android:title="@string/dynamic_island_calls_title"
             settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
 
         <SwitchPreferenceCompat
             android:key="dynamic_island_live_media"
+            android:layout="@layout/personalise_preference_cookie"
             android:icon="@drawable/ic_dynamic_island_media"
             android:title="@string/dynamic_island_media_title"
             settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
 
         <SwitchPreferenceCompat
             android:key="dynamic_island_live_alarms"
+            android:layout="@layout/personalise_preference_squircle"
             android:icon="@drawable/ic_dynamic_island_alarm"
             android:title="@string/dynamic_island_alarms_title"
             settings:controller="com.android.settings.personalise.dynamicisland.DynamicIslandTogglePreferenceController"/>
