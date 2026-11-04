@@ -79,4 +79,7 @@
     <string name="personalise_banner_qs_title">Quick Settings, your way</string>
     <string name="personalise_banner_qs_desc">Use the Motorola layout with sliders and choose whether tiles show their names.</string>
     <string name="personalise_banner_integrity_desc">Spoof certified properties and set your own keybox and PIF files so apps that check device integrity keep working.</string>
+    <string name="status_bar_category">Status bar</string>
+    <string name="status_bar_wifi_standard_title">Wi-Fi standard</string>
+    <string name="status_bar_wifi_standard_summary">Show the Wi-Fi generation, like 6 or 7, next to the signal icon</string>
 </resources>

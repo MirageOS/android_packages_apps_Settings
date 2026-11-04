@@ -76,4 +76,7 @@
     <string name="personalise_banner_qs_title">Definições rápidas à sua maneira</string>
     <string name="personalise_banner_qs_desc">Use o layout da Motorola com sliders e escolha se os mosaicos mostram o nome.</string>
     <string name="personalise_banner_integrity_desc">Simule propriedades certificadas e use os seus próprios ficheiros de keybox e PIF para que as apps que verificam a integridade do dispositivo continuem a funcionar.</string>
+    <string name="status_bar_category">Barra de estado</string>
+    <string name="status_bar_wifi_standard_title">Norma Wi-Fi</string>
+    <string name="status_bar_wifi_standard_summary">Mostra a geração do Wi-Fi, como 6 ou 7, junto ao ícone de sinal</string>
 </resources>

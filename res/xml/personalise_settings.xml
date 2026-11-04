@@ -91,6 +91,20 @@
             settings:controller="com.android.settings.personalise.qs.QsStyleTogglePreferenceController"/>
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:key="personalise_status_bar_category"
+        android:order="8"
+        android:title="@string/status_bar_category">
+
+        <SwitchPreferenceCompat
+            android:key="status_bar_wifi_standard"
+            android:layout="@layout/personalise_preference_clover"
+            android:icon="@drawable/ic_wifi_signal_4"
+            android:title="@string/status_bar_wifi_standard_title"
+            android:summary="@string/status_bar_wifi_standard_summary"
+            settings:controller="com.android.settings.personalise.statusbar.StatusBarTogglePreferenceController"/>
+    </PreferenceCategory>
+
     <com.android.settingslib.widget.LayoutPreference
         android:key="personalise_banner_integrity"
         android:order="9"
