@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Cena que fica atrás do painel na pré-visualização do desfoque: formas coloridas num gradiente,
+    cobertas pelo wallpaper assim que ele carrega. É incluída duas vezes, uma nítida e outra
+    desfocada dentro do painel.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/display_blur_scene_bg"
+    android:importantForAccessibility="noHideDescendants">
+
+    <ImageView
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="top|start"
+        android:layout_marginStart="-30dp"
+        android:layout_marginTop="-24dp"
+        android:src="@drawable/personalise_shape_flower"
+        android:tint="@color/settingslib_materialColorSecondaryContainer"/>
+
+    <ImageView
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_gravity="bottom|end"
+        android:layout_marginEnd="-20dp"
+        android:layout_marginBottom="-24dp"
+        android:src="@drawable/personalise_shape_cookie"
+        android:tint="@color/settingslib_materialColorPrimary"/>
+
+    <ImageView
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="64dp"
+        android:src="@drawable/personalise_shape_clover"
+        android:tint="@color/settingslib_materialColorTertiary"/>
+
+    <ImageView
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_gravity="bottom|start"
+        android:layout_marginStart="48dp"
+        android:layout_marginBottom="-18dp"
+        android:src="@drawable/personalise_shape_squircle"
+        android:tint="@color/settingslib_materialColorPrimaryContainer"/>
+
+    <ImageView
+        android:id="@+id/blur_scene_wallpaper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:visibility="gone"/>
+</FrameLayout>

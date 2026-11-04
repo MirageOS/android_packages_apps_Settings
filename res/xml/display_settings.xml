@@ -115,13 +115,42 @@
             android:fragment="com.android.settings.gestures.SystemNavigationGestureSettings"
             settings:controller="com.android.settings.gestures.SystemNavigationPreferenceController"/>
 
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:key="category_key_blur"
+        android:title="@string/category_name_blur"
+        android:order="-175">
+
+        <com.android.settingslib.widget.LayoutPreference
+            android:key="blur_preview_banner"
+            android:order="0"
+            android:layout="@layout/display_blur_banner"
+            android:selectable="false"
+            settings:controller="com.android.settings.display.BlurPreviewPreferenceController"/>
+
         <SwitchPreferenceCompat
             android:key="disable_window_blurs"
+            android:order="10"
             android:icon="@drawable/ic_blur"
             android:title="@string/blur_switch"
             android:summary="@string/blur_switch_summary"
+            android:disableDependentsState="true"
             settings:controller="com.android.settings.display.BlurPreferenceController"
             settings:keywords="@string/keywords_blur_switch"/>
+
+        <com.android.settingslib.widget.SliderPreference
+            android:key="qs_blur_level"
+            android:order="20"
+            android:persistent="false"
+            android:title="@string/blur_level_title"
+            android:dependency="disable_window_blurs"
+            settings:iconStart="@drawable/ic_remove_24dp"
+            settings:iconStartContentDescription="@string/blur_level_make_weaker_desc"
+            settings:iconEnd="@drawable/ic_add_24dp"
+            settings:iconEndContentDescription="@string/blur_level_make_stronger_desc"
+            settings:keywords="@string/keywords_blur_level"
+            settings:controller="com.android.settings.display.BlurLevelPreferenceController"/>
 
     </PreferenceCategory>
 

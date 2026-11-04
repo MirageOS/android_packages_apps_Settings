@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Strings das opções de desfoque na tela Tela: banner de prévia e slider de intensidade. -->
+<resources>
+    <string name="category_name_blur">Desfoque</string>
+    <string name="blur_level_title">Intensidade do desfoque</string>
+    <string name="blur_level_value">%1$d%%</string>
+    <string name="blur_level_make_weaker_desc">Diminuir o desfoque</string>
+    <string name="blur_level_make_stronger_desc">Aumentar o desfoque</string>
+    <string name="keywords_blur_level">intensidade do desfoque, nível de blur, desfoque das configurações rápidas, painel</string>
+    <string name="blur_preview_level">Desfoque %1$d%%</string>
+    <string name="blur_preview_off">Desfoque desativado</string>
+    <string name="blur_preview_description">Pré-visualização ao vivo do desfoque das Configurações rápidas</string>
+</resources>
