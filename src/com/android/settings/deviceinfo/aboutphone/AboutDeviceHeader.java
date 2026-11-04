@@ -19,6 +19,8 @@ package com.android.settings.deviceinfo.aboutphone;
 import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.graphics.drawable.Drawable;
 import android.hardware.camera2.CameraCharacteristics;
 import android.hardware.camera2.CameraManager;
 import android.hardware.display.DisplayManager;
@@ -48,7 +50,9 @@ import java.util.List;
  * "About phone".
  *
  * <p>The maintainer name comes from the {@code ro.build.mirage.maintainer} system property,
- * normally set at build time with {@code MIRAGE_MAINTAINER := Name}.
+ * normally set at build time with {@code MIRAGE_MAINTAINER := Name}. A badge next to the name shows
+ * whether this is an official build, from {@code ro.build.mirage.official}, set at build time with
+ * {@code IS_OFFICIAL := true}.
  */
 public final class AboutDeviceHeader {
 
@@ -56,6 +60,9 @@ public final class AboutDeviceHeader {
 
     /** System property holding the maintainer name. */
     static final String PROP_MAINTAINER = "ro.build.mirage.maintainer";
+
+    /** System property that is "true" on official builds ({@code IS_OFFICIAL := true}). */
+    static final String PROP_OFFICIAL = "ro.build.mirage.official";
 
     private static final int[] RAM_STEPS_GB = {1, 2, 3, 4, 6, 8, 10, 12, 16, 18, 24, 32};
 
@@ -93,6 +100,7 @@ public final class AboutDeviceHeader {
         String maintainer = SystemProperties.get(PROP_MAINTAINER, "").trim();
         text(root, R.id.about_maintainer_summary, TextUtils.isEmpty(maintainer)
                 ? context.getString(R.string.about_device_maintainer_unknown) : maintainer);
+        bindBuildBadge(context, root, maintainer);
 
         // Cheap specs on the main thread
         text(root, R.id.about_ram_summary,
@@ -117,6 +125,34 @@ public final class AboutDeviceHeader {
                 }
             });
         }, "AboutDeviceHeader").start();
+    }
+
+    /** Puts the official / unofficial badge right after the maintainer name. */
+    private static void bindBuildBadge(Context context, View root, String maintainer) {
+        final TextView view = root.findViewById(R.id.about_maintainer_summary);
+        if (view == null) {
+            return;
+        }
+        final boolean official = SystemProperties.getBoolean(PROP_OFFICIAL, false);
+        final Drawable badge = context.getDrawable(official
+                ? R.drawable.ic_about_verified : R.drawable.ic_about_unofficial);
+        if (badge == null) {
+            return;
+        }
+        badge.mutate();
+        view.setCompoundDrawablePadding(
+                context.getResources().getDimensionPixelSize(R.dimen.about_device_badge_padding));
+        view.setCompoundDrawablesRelativeWithIntrinsicBounds(null, null, badge, null);
+        view.setCompoundDrawableTintList(ColorStateList.valueOf(context.getColor(official
+                ? R.color.settingslib_materialColorPrimary
+                : R.color.settingslib_materialColorOnSurfaceVariant)));
+
+        final String buildType = context.getString(official
+                ? R.string.about_device_build_official : R.string.about_device_build_unofficial);
+        final String name = TextUtils.isEmpty(maintainer)
+                ? context.getString(R.string.about_device_maintainer_unknown) : maintainer;
+        view.setContentDescription(
+                context.getString(R.string.about_device_maintainer_with_build, name, buildType));
     }
 
     private static void text(View root, int id, CharSequence value) {

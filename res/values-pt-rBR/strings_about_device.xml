@@ -6,6 +6,9 @@
     <string name="about_device_storage_summary"><xliff:g id="used">%1$d</xliff:g> GB / <xliff:g id="total">%2$d</xliff:g> GB</string>
     <string name="about_device_maintainer">Maintainer</string>
     <string name="about_device_maintainer_unknown">Não definido</string>
+    <string name="about_device_build_official">Build oficial</string>
+    <string name="about_device_build_unofficial">Build não oficial</string>
+    <string name="about_device_maintainer_with_build"><xliff:g id="maintainer">%1$s</xliff:g>, <xliff:g id="build_type">%2$s</xliff:g></string>
     <string name="about_device_ram">RAM</string>
     <string name="about_device_ram_summary"><xliff:g id="ram">%1$d</xliff:g> GB</string>
     <string name="about_device_camera">Câmera</string>
