@@ -69,6 +69,8 @@
     <string name="qs_style_motorola_summary">Usa o esquema das Definições rápidas da Motorola, com sliders de volume e brilho</string>
     <string name="qs_show_labels_title">Mostrar etiquetas</string>
     <string name="qs_show_labels_summary">Mostra o nome de cada mosaico</string>
+    <string name="qs_dual_shade_title">Painéis separados</string>
+    <string name="qs_dual_shade_summary">Mostra as notificações e as definições rápidas em painéis diferentes. Desative para usar um painel único</string>
 
     <!-- Banners da tela Personalise -->
     <string name="personalise_banner_island_title">Atividade em tempo real, a um toque</string>

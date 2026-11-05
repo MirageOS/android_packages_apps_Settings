@@ -89,6 +89,14 @@
             android:title="@string/qs_show_labels_title"
             android:summary="@string/qs_show_labels_summary"
             settings:controller="com.android.settings.personalise.qs.QsStyleTogglePreferenceController"/>
+
+        <SwitchPreferenceCompat
+            android:key="qs_dual_shade"
+            android:layout="@layout/personalise_preference_clover"
+            android:icon="@drawable/ic_qs_dual_shade"
+            android:title="@string/qs_dual_shade_title"
+            android:summary="@string/qs_dual_shade_summary"
+            settings:controller="com.android.settings.personalise.qs.QsDualShadeTogglePreferenceController"/>
     </PreferenceCategory>
 
     <PreferenceCategory

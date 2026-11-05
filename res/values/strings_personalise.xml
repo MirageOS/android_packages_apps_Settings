@@ -72,6 +72,8 @@
     <string name="qs_style_motorola_summary">Use the Motorola-style Quick Settings layout, with volume and brightness sliders</string>
     <string name="qs_show_labels_title">Show labels</string>
     <string name="qs_show_labels_summary">Show the name of each tile</string>
+    <string name="qs_dual_shade_title">Dual shade</string>
+    <string name="qs_dual_shade_summary">Shows notifications and quick settings in separate panels. Turn off to use a single shade</string>
 
     <!-- Banners da tela Personalise -->
     <string name="personalise_banner_island_title">Live activity, one tap away</string>
